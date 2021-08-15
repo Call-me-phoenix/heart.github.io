@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, navy, black);
+        }
+
+        @keyframes scale {
+            0% {
+                transform: scale(1, 1);
+            }
+
+            100% {
+                transform: scale(1, 2);
+            }
+        }
+
+        .box {
+            width: 14em;
+            height: 11em;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box .w {
+            --h: 50%;
+            --t: 25%;
+            position: relative;
+            height: var(--h);
+            top: var(--t);
+            width: 1em;
+            --c: lightblue;
+            background-color: var(--c);
+            border-radius: 0.5em;
+            animation: beating 3s infinite;
+        }
+
+        .box .orange {
+            --c: #f86b1d;
+            --h: 3em;
+            --t: 2.2em;
+        }
+
+        .box .yellow {
+            --c: #fbc82f;
+            --h: 6em;
+            --t: 0.6em;
+        }
+
+        .box .green {
+            --c: #45B787;
+            --h: 8em;
+            --t: 0;
+        }
+
+        .box .blue {
+            --c: #11659a;
+            --h: 9em;
+            --t: 0.8em;
+        }
+
+        .box .purple {
+            --c: #7e1671;
+            --h: 9.4em;
+            --t: 1.6em;
+        }
+
+        @keyframes beating {
+
+            0%,
+            30% {
+                height: var(--h);
+                top: var(--t);
+                background-color: var(--c);
+                filter: blur(0);
+                width: 1em;
+            }
+
+            60%,
+            70% {
+                height: 50%;
+                top: 25%;
+                background-color: lightblue;
+                filter: blur(5px);
+                width: 0.1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="w orange"></div>
+        <div class="w yellow"></div>
+        <div class="w green"></div>
+        <div class="w blue"></div>
+        <div class="w purple"></div>
+        <div class="w blue"></div>
+        <div class="w green"></div>
+        <div class="w yellow"></div>
+        <div class="w orange"></div>
+    </div>
+
+</body>
+
+</html>
